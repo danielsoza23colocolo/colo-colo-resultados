@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colo-Colo · Resultados y calendario</title>
+  <meta name="description" content="Resultados de Colo-Colo desde 2020, estadísticas por temporada y calendario de próximos partidos.">
+  <link rel="icon" href="https://a.espncdn.com/i/teamlogos/soccer/500/2688.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <div class="brand">
+        <img src="https://a.espncdn.com/i/teamlogos/soccer/500/2688.png" alt="Escudo de Colo-Colo" width="72" height="72">
+        <div>
+          <h1>Colo-Colo</h1>
+          <p>Resultados desde 2020 · Calendario · Estadísticas</p>
+        </div>
+      </div>
+      <div class="next-card" id="next-card" aria-live="polite">
+        <span class="label">Próximo partido</span>
+        <div id="next-body">Cargando…</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs wrap" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="results">Resultados</button>
+    <button role="tab" aria-selected="false" data-tab="calendar">Calendario</button>
+    <button role="tab" aria-selected="false" data-tab="seasons">Temporadas</button>
+  </nav>
+
+  <main class="wrap">
+    <section id="tab-results" class="panel">
+      <div class="filters">
+        <label>Temporada
+          <select id="f-season"></select>
+        </label>
+        <label>Competición
+          <select id="f-comp"></select>
+        </label>
+        <label>Resultado
+          <select id="f-result">
+            <option value="">Todos</option>
+            <option value="W">Victorias</option>
+            <option value="D">Empates</option>
+            <option value="L">Derrotas</option>
+          </select>
+        </label>
+        <label>Condición
+          <select id="f-venue">
+            <option value="">Local y visita</option>
+            <option value="home">Local</option>
+            <option value="away">Visita</option>
+          </select>
+        </label>
+        <label class="grow">Rival
+          <input id="f-q" type="search" placeholder="Buscar rival…">
+        </label>
+      </div>
+
+      <div class="stats" id="stats"></div>
+      <div class="form-row"><span class="label">Últimos 5</span><div id="form"></div></div>
+      <p class="count" id="count"></p>
+      <ul class="matches" id="matches"></ul>
+    </section>
+
+    <section id="tab-calendar" class="panel" hidden>
+      <ul class="matches" id="upcoming"></ul>
+    </section>
+
+    <section id="tab-seasons" class="panel" hidden>
+      <div class="table-scroll">
+        <table id="season-table">
+          <thead><tr><th>Temporada</th><th>PJ</th><th>G</th><th>E</th><th>P</th><th>GF</th><th>GC</th><th>DG</th><th>% Pts</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p id="updated"></p>
+    <p>Datos: ESPN. Sitio no oficial, sin relación con Colo-Colo S.A.D.P. Horarios en hora de Chile.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
